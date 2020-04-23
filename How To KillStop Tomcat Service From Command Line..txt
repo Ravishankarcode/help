@@ -1,0 +1,13 @@
+How To KillStop Tomcat Service From Command Line?
+----------------------------------------------------
+Step 1: Open Command Prompt.
+Step 2: Run following commands to get all listening ports (If tomcat runnig on other ports apart from 8080)
+
+netstat -aon | find /i "listening"
+Apply port filter If you know port number
+netstat -aon |find /i "listening" |find "8080"
+
+Step 3: Copy PID from result set
+
+taskkill /F /PID
+Ex: taskkill /F /PID 13332
